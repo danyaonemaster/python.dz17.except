@@ -5,8 +5,7 @@ while True:
         age = int(input("Enter your age: "))
         if 0 >= age or age >= 130:
             raise Exception
-        print(f"Hello, {name}! Your age is {age}")
+        print(f"\nHello, {name}! Your age is {age}")
         break
     except Exception:
-        print("enter age 0 to 130")
-
+        print("\n enter 0 > age < 130")
