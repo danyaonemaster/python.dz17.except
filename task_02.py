@@ -1,12 +1,31 @@
-try:
-    numbers = input('enter numbers > 0 separator",": ')
-    number_list = list(map(int, numbers.split(",")))
+def task_02_1(name, age):
+    def format_greeting(name, age):
+        if age < 0 or age > 130:
+            raise ValueError("Invalid age")
+        return f"Hello, {name}! Your age is {age}."
 
-    match all(num >= 0 for num in number_list):
-        case False:
-            raise Exception
-        case True:
-            print(f"sum numbers: {sum(number_list)}")
+    try:
+        message = format_greeting(name, age)
+        print(message)
+    except ValueError:
+        print("\n enter 0 > age < 130")
 
-except Exception:
-    print('enter numbers > 0')
+
+def task_02_2(name, age):
+    def format_greeting(name, age):
+        try:
+            if age < 0 or age > 130:
+                raise ValueError
+            return f"Hello, {name}! Your age is {age}."
+        except ValueError:
+            print("\n enter 0 > age < 130")
+
+    try:
+        message = format_greeting(name, age)
+        print(message)
+    except ValueError as e:
+        print("\n enter 0 > age < 130")
+
+
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
